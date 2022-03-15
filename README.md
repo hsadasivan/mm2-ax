@@ -2,6 +2,7 @@
 **Pre-requisites for testing**:
 
 Hardware:
+
 x86 CPU with 85GB RAM and/or A100 GPU with 40GB DRAM.
 Suggested GCP instance: a2-highgpu-1g
 
