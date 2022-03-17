@@ -1,8 +1,8 @@
 # mm2-ax
  
-mm2-ax is [minimap2 v2.17](https://github.com/lh3/minimap2/tree/7bc87b4175dcf3b6df7d4f6ae9db5f3eadd30302) with GPU accelerated chaining for accurate long read alignment.
+mm2-ax is [minimap2 v2.18](https://github.com/lh3/minimap2/tree/7bc87b4175dcf3b6df7d4f6ae9db5f3eadd30302) with GPU accelerated chaining for accurate long read alignment.
 
-**If you are using/comparing to this work as part of your research/project, please cite: [Sadasivan, Harisankar](https://github.com/harisankarsadasivan?tab=repositories), Milos Maric, Eric Dawson, Vishanth Iyer, Johnny Israeli, and Satish Narayanasamy. "[Accelerating Minimap2 for accurate long read alignment on GPUs.](https://www.biorxiv.org/content/10.1101/2022.03.09.483575v1.full.pdf)" bioRxiv (2022).**
+**If you are using/comparing to this work as part of your research/project, please cite: Sadasivan, Harisankar, Milos Maric, Eric Dawson, Vishanth Iyer, Johnny Israeli, and Satish Narayanasamy. "[Accelerating Minimap2 for accurate long read alignment on GPUs.](https://www.biorxiv.org/content/10.1101/2022.03.09.483575v1.full.pdf)" bioRxiv (2022).**
 Please direct all queries to [Harisankar Sadasivan](https://github.com/harisankarsadasivan?tab=repositories), hariss@umich.edu
 
 
@@ -25,7 +25,15 @@ Support for other environments is not tested.
 Useful tips: Please don't forget to edit system PATH and libpath for the toolkit and then to re-start the machine. Use nvcc --version to see if toolkit is installed and nvidia-smi to see GPU driver is detected. Proceed if these two checks pass. 
 
 
-(2) Run ./setup.sh followed by ./mm2-ax.sh <desired_read_length>. Please choose desired_read_length from any of {2000,3000,4000,5000,10000,20000,30000,40000,50000,100000,150000}
+(2) Run 
+```
+git clone https://github.com/hsadasivan/mm2-ax.git
+cd mm2-ax/;
+sudo chmod +x *.sh
+./setup.sh;
+./mm2-ax.sh <desired_read_length>
+```
+>Please choose desired_read_length from any of {2000,3000,4000,5000,10000,20000,30000,40000,50000,100000,150000}
 
 (3) Output validation: After ./mm2-ax.sh completes, you may please compare mm2-ax generated out/*.log with [mm2-fast v2.18](https://github.com/lh3/minimap2/tree/d6e6811a0f797e2a8391b02497b99739e7a14c31) generated out/*-mm2-fast.log to validate the output.
 
