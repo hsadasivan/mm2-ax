@@ -8,5 +8,6 @@ curl -s -L https://nvidia.github.io/nvidia-container-runtime/experimental/$distr
 sudo apt-get update;
 sudo apt-get install -y nvidia-docker2;
 sudo systemctl restart docker;
-sudo docker build -t mm2-ax .;
-sudo docker run -it --rm --gpus all --mount type=bind,source=${PWD},target=/mm2-ax/  hariumich/mm2-ax:1.0 bash;
+#sudo docker build -t mm2-ax .;
+sudo docker pull hariumich/mm2-ax:1.1;
+sudo docker run -it --rm --gpus all --mount type=bind,source=${PWD},target=/mm2-ax/  hariumich/mm2-ax:1.1 bash;
