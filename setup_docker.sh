@@ -8,6 +8,11 @@ curl -s -L https://nvidia.github.io/nvidia-container-runtime/experimental/$distr
 sudo apt-get update;
 sudo apt-get install -y nvidia-docker2;
 sudo systemctl restart docker;
-#sudo docker build -t mm2-ax .;
-sudo docker pull hariumich/mm2-ax:1.1;
-sudo docker run -it --rm --gpus all --mount type=bind,source=${PWD},target=/mm2-ax/  hariumich/mm2-ax:1.1 bash;
+
+sudo apt-get update; 
+sudo apt-get install -y build-essential;
+sudo apt-get update;
+wget https://developer.download.nvidia.com/compute/cuda/11.5.2/local_installers/cuda_11.5.2_495.29.05_linux.run; sudo sh cuda_11.5.2_495.29.05_linux.run --silent
+
+sudo docker build -t mm2-ax .;
+sudo docker run -it --rm --gpus all --mount type=bind,source=${PWD},target=/mm2-ax/  mm2-ax bash;
