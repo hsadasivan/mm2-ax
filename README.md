@@ -30,7 +30,7 @@ Useful tips: Please don't forget to edit system PATH and libpath for the toolkit
 git clone https://github.com/hsadasivan/mm2-ax.git
 cd mm2-ax/;
 sudo chmod +x *.sh
-./setup.sh;
+./setup_docker.sh;
 ./mm2-ax.sh <desired_read_length>
 ```
 >Please choose desired_read_length from any of {2000,3000,4000,5000,10000,20000,30000,40000,50000,100000,150000}
