@@ -3,30 +3,30 @@
 
 import sys
 #input FASTA file 
-ip="../data/ONT/HG002_ucsc_Jan_2019_Guppy_3.4.4.fasta"
+ip="data/ONT/HG002_ucsc_Jan_2019_Guppy_3.4.4.fasta"
 
 #output files with binned reads
-f1k = open("../data/ONT/1k.fa","w+")
-f2k = open("../data/ONT/2k.fa","w+")
-f3k = open("../data/ONT/3k.fa","w+")
-f4k = open("../data/ONT/4k.fa","w+")
-f5k = open("../data/ONT/5k.fa","w+")
-f10k = open("../data/ONT/10k.fa","w+")
-f20k = open("../data/ONT/20k.fa","w+")
-f30k = open("../data/ONT/30k.fa","w+")
-f40k = open("../data/ONT/40k.fa","w+")
-f45k = open("../data/ONT/45k.fa","w+")
-f50k = open("../data/ONT/50k.fa","w+")
-f100k = open("../data/ONT/100k.fa","w+")
-f150k = open("../data/ONT/150k.fa","w+")
-f200k = open("../data/ONT/200k.fa","w+")
-#f250k = open("../data/ONT/250k.fa","w+")
-#f300k = open("../data/ONT/300k.fa","w+")
-#f350k = open("../data/ONT/350k.fa","w+")
-#f400k = open("../data/ONT/400k.fa","w+")
-#f450k = open("../data/ONT/450k.fa","w+")
-#f500k = open("../data/ONT/500k.fa","w+")
-#f1M = open("../data/ONT/1M.fa","w+")
+f1k = open("data/ONT/1k.fa","w+")
+f2k = open("data/ONT/2k.fa","w+")
+f3k = open("data/ONT/3k.fa","w+")
+f4k = open("data/ONT/4k.fa","w+")
+f5k = open("data/ONT/5k.fa","w+")
+f10k = open("data/ONT/10k.fa","w+")
+f20k = open("data/ONT/20k.fa","w+")
+f30k = open("data/ONT/30k.fa","w+")
+f40k = open("data/ONT/40k.fa","w+")
+f45k = open("data/ONT/45k.fa","w+")
+f50k = open("data/ONT/50k.fa","w+")
+f100k = open("data/ONT/100k.fa","w+")
+f150k = open("data/ONT/150k.fa","w+")
+f200k = open("data/ONT/200k.fa","w+")
+#f250k = open("data/ONT/250k.fa","w+")
+#f300k = open("data/ONT/300k.fa","w+")
+#f350k = open("data/ONT/350k.fa","w+")
+#f400k = open("data/ONT/400k.fa","w+")
+#f450k = open("data/ONT/450k.fa","w+")
+#f500k = open("data/ONT/500k.fa","w+")
+#f1M = open("data/ONT/1M.fa","w+")
 
 
 #binning reads from input file
@@ -97,7 +97,7 @@ with open(ip, 'r') as f:
             #elif len(seq) <=1000000:
             #    f1M.write('\n'+header + '\n' + seq)
 f.close()
-f1M.close()
+#f1M.close()
 f1k.close()
 f2k.close()
 f3k.close()
