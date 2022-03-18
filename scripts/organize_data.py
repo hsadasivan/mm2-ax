@@ -6,7 +6,7 @@ import sys
 ip="data/ONT/HG002_ucsc_Jan_2019_Guppy_3.4.4.fasta"
 
 #output files with binned reads
-f1k = open("data/ONT/1k.fa","w+")
+#f1k = open("data/ONT/1k.fa","w+")
 f2k = open("data/ONT/2k.fa","w+")
 f3k = open("data/ONT/3k.fa","w+")
 f4k = open("data/ONT/4k.fa","w+")
@@ -19,7 +19,7 @@ f45k = open("data/ONT/45k.fa","w+")
 f50k = open("data/ONT/50k.fa","w+")
 f100k = open("data/ONT/100k.fa","w+")
 f150k = open("data/ONT/150k.fa","w+")
-f200k = open("data/ONT/200k.fa","w+")
+#f200k = open("data/ONT/200k.fa","w+")
 #f250k = open("data/ONT/250k.fa","w+")
 #f300k = open("data/ONT/300k.fa","w+")
 #f350k = open("data/ONT/350k.fa","w+")
@@ -35,9 +35,7 @@ with open(ip, 'r') as f:
         if line.startswith(">"):
             header = line.strip()
             seq = next(f).strip()
-            if len(seq) <=1000:
-                f1k.write('\n'+header + '\n' + seq)
-            elif len(seq) <=2000:
+            if len(seq) <=2000:
                 f2k.write('\n'+header + '\n' + seq)
 
             elif len(seq) <=3000:
@@ -73,9 +71,6 @@ with open(ip, 'r') as f:
             elif len(seq) <=150000:
                 f150k.write('\n'+header + '\n' + seq)
 
-            elif len(seq) <=200000:
-                f200k.write('\n'+header + '\n' + seq)
-
             #elif len(seq) <=250000:
             #    f250k.write('\n'+header + '\n' + seq)
 
@@ -98,7 +93,6 @@ with open(ip, 'r') as f:
             #    f1M.write('\n'+header + '\n' + seq)
 f.close()
 #f1M.close()
-f1k.close()
 f2k.close()
 f3k.close()
 f4k.close()
@@ -111,7 +105,6 @@ f45k.close()
 f50k.close()
 f100k.close()
 f150k.close()
-f200k.close()
 #f250k.close()
 #f300k.close()
 #f350k.close()

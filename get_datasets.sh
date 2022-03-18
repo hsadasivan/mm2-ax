@@ -45,6 +45,7 @@ rm -rf GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz;
 #############Re-organize data into bins based on read length######
 echo -e "\n${G1}re-organizing data into bins...${G2}"
 python3 scripts/organize_data.py || fail=true
+sed -i '1d' data/ONT/*.fa;
 if $fail; then echo -e "\n${R1}Re-organization of data failed${R2}"; exit 1; else echo -e "${G1}Reads are successfully re-organized into bins!${G2}"; fi
 
 
