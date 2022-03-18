@@ -24,31 +24,27 @@ Support for other environments is not tested.
 **1.2 Software**:
 
 
-(1)Dependencies: zlib (libz-dev), g++ and gcc version: 7.5.0, clang-format v6.0.0, python3.6.9. 
+(0)mm2-ax is closed source but we provide a docker container to easily test mm2-ax.
 
-(2)Please install the latest NVIDIA CUDA Toolkit and driver from https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=18.04&target_type=runfile_local
-
-Useful tips: Please don't forget to edit system PATH and libpath for the toolkit and then to re-start the machine. Use nvcc --version to see if toolkit is installed and nvidia-smi to see GPU driver is detected. Proceed if these two checks pass. 
-
-
-(2) Run 
+(1) Run 
 ```
 git clone https://github.com/hsadasivan/mm2-ax.git
 cd mm2-ax/;
 sudo chmod +x *.sh
 ./setup_docker.sh;
+cd mm2-ax;
 ./mm2-ax.sh <desired_read_length>
 ```
->Please choose desired_read_length from any of {2000,3000,4000,5000,10000,20000,30000,40000,50000,100000,150000}
+>Please choose desired_read_length from any of {2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 100000, 150000}
 
-(3) Output validation: After ./mm2-ax.sh completes, you may please compare mm2-ax generated out/*.log with [mm2-fast v2.18](https://github.com/lh3/minimap2/tree/d6e6811a0f797e2a8391b02497b99739e7a14c31) generated out/*-mm2-fast.log to validate the output.
+(3) Output validation: After ./mm2-ax.sh completes, you may please compare mm2-ax generated output in out/*.log with [mm2-fast v2.18](https://github.com/lh3/minimap2/tree/d6e6811a0f797e2a8391b02497b99739e7a14c31) to mm2-fast generated output out/*-mm2-fast.log.
 
 
 **2. Current limitations**:
 
 (1) Current support is only for 1 CPU thread.
 
-(2) Please use only the input datasets and application provided for testing. Development of concurent GPU I/O management is in-progress and future releases will support any input number of reads.
+(2) Please use only the input datasets and application provided for testing. Development of concurent GPU I/O management is in-progress and future releases will support any input number of reads. If mm2-ax fails on any of the bins, please clear your GPU's DRAM or use another GCP instance.
 
 (3)Please do not compare the wall-clock time as the application is not yet optimized for end-to-end time. We optimize only for chaining and print the measured time in the log.
 
