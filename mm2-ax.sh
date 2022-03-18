@@ -34,39 +34,39 @@ then
 elif [[ $1 -eq 30000 ]]
 then	
 	echo "bin length set to $1"
-	head -n $((1*9*2)) data/ONT/30k.fa > data/ip.fa; 
+	head -n 18 data/ONT/30k.fa > data/ip.fa; 
 	head -n $((23015*9*2)) data/ONT/2k.fa >> data/ip.fa; bin/b30k -t 1 -x map-ont data/hg38.mmi data/ip.fa > out/30k.log;
 
 elif [[ $1 -eq 40000 ]]
 then	
 	echo "bin length set to $1"
-	head -n $((1*9*2)) data/ONT/40k.fa > data/ip.fa; 
-	head -n $((23002*9*2)) data/ONT/2k.fa >> data/ip.fa; bin/b40k -t 1 -x map-ont data/hg38.mmi data/ip.fa > out/40k.log;
+	head -n 18 data/ONT/40k.fa > data/ip.fa; 
+	head -n $((23001*9*2)) data/ONT/2k.fa >> data/ip.fa; bin/b40k -t 1 -x map-ont data/hg38.mmi data/ip.fa > out/40k.log;
 
 elif [[ $1 -eq 45000 ]]
 then	
 	echo "bin length set to $1"
-	head -n $((1*9*2)) data/ONT/50k.fa > data/ip.fa; 
-	head -n $((23000*9*2)) data/ONT/2k.fa >> data/ip.fa; bin/b45k -t 1 -x map-ont data/hg38.mmi data/ip.fa > out/45k.log;
+	head -n 18 data/ONT/50k.fa > data/ip.fa; 
+	head -n $((22999*9*2)) data/ONT/2k.fa >> data/ip.fa; bin/b45k -t 1 -x map-ont data/hg38.mmi data/ip.fa > out/45k.log;
 	
 elif [[ $1 -eq 50000 ]]
 then
 	echo "bin length set to $1"
-	head -n $((1*9*2)) data/ONT/50k.fa > data/ip.fa; 
-	head -n $((22995*9*2)) data/ONT/2k.fa >> data/ip.fa; bin/b50k -t 1 -x map-ont data/hg38.mmi data/ip.fa > out/50k.log;
+	head -n 18 data/ONT/50k.fa > data/ip.fa; 
+	head -n $((22993*9*2)) data/ONT/2k.fa >> data/ip.fa; bin/b50k -t 1 -x map-ont data/hg38.mmi data/ip.fa > out/50k.log;
 
 elif [[ $1 -eq 100000 ]]
 then	
 	echo "bin length set to $1"
-	head -n $((1*9*2)) data/ONT/100k.fa > data/ip.fa; 
-	head -n $((22969*9*2)) data/ONT/2k.fa >> data/ip.fa; bin/b100k -t 1 -x map-ont data/hg38.mmi data/ip.fa > out/100k.log;
+	head -n 18 data/ONT/100k.fa > data/ip.fa; 
+	head -n $((22968*9*2)) data/ONT/2k.fa >> data/ip.fa; bin/b100k -t 1 -x map-ont data/hg38.mmi data/ip.fa > out/100k.log;
 	
 elif [[ $1 -eq 150000 ]]
 then	
 	echo "bin length set to $1"
-	head -n $((1*9*2)) data/ONT/150k.fa > data/ip.fa; 
-	head -n $((22923*9*2)) data/ONT/2k.fa >> data/ip.fa; bin/b150k -t 1 -x map-ont data/hg38.mmi data/ip.fa > out/150k.log;
+	head -n 18 data/ONT/150k.fa > data/ip.fa; 
+	head -n $((22922*9*2)) data/ONT/2k.fa >> data/ip.fa; bin/b150k -t 1 -x map-ont data/hg38.mmi data/ip.fa > out/150k.log;
 fi
 
 #generate output from mm2-fast to check output equality
-#bin/mm2-fast -t 1 -x map-ont data/hg38.mmi data/ip.fa > out/2k-mm2-fast.log;
+bin/mm2-fast -t 1 -x map-ont data/hg38.mmi data/ip.fa > out/2k-mm2-fast.log;
