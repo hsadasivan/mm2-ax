@@ -45,3 +45,5 @@ sudo chmod +x *.sh
 (2) Please use only the input datasets and application provided for testing. Development of concurent GPU I/O management is in-progress and future releases will support any input number of reads.
 
 (3)Please do not compare the wall-clock time as the application is not yet optimized for end-to-end time. We optimize only for chaining and print the measured time in the log.
+![overview](https://user-images.githubusercontent.com/84148853/159078375-9ec1b75a-72cd-4e51-be34-4877e8144ef4.png)
+
