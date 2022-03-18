@@ -25,7 +25,7 @@ Support for other environments is not tested.
 
 (1) Run 
 
-mm2-ax is closed source but we provide a docker container to easily test mm2-ax.
+mm2-ax is closed source but we provide a [docker container](https://hub.docker.com/repository/docker/hariumich/mm2-ax) to easily test mm2-ax.
 ```
 git clone https://github.com/hsadasivan/mm2-ax.git
 cd mm2-ax/;
