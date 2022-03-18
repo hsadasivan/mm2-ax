@@ -26,13 +26,14 @@ sudo chmod +x *.sh
 
 ```
 
-(2) Download dataset and run mm2-ax:
+(2) Download datasets and run mm2-ax:
 
 ```
 ./get_datasets.sh
 ./mm2-ax.sh <desired_read_length>
 ```
 >Please choose desired_read_length from any of {2000,3000,4000,5000,10000,20000,30000,40000,50000,100000,150000}
+
 (3) Output validation: After ./mm2-ax.sh completes, you may please compare mm2-ax generated out/*.log with [mm2-fast v2.18](https://github.com/lh3/minimap2/tree/d6e6811a0f797e2a8391b02497b99739e7a14c31) generated out/*-mm2-fast.log to validate the output.
 
 
