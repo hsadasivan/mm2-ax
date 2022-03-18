@@ -19,9 +19,9 @@ Support for other environments is not tested.
 
 (1) Pull [docker image](https://hub.docker.com/repository/docker/hariumich/mm2-ax/general)
 ```
-git clone https://github.com/hsadasivan/mm2-ax.git
+git clone https://github.com/hsadasivan/mm2-ax.git;
 cd mm2-ax/;
-sudo chmod +x *.sh
+sudo chmod +x *.sh;
 ./setup_docker.sh;
 
 ```
@@ -30,8 +30,8 @@ sudo chmod +x *.sh
 
 ```
 cd mm2-ax;
-./get_datasets.sh
-./mm2-ax.sh <desired_read_length>
+./get_datasets.sh;
+./mm2-ax.sh <desired_read_length>;
 ```
 >Please choose desired_read_length from any of {2000,3000,4000,5000,10000,20000,30000,40000,50000,100000,150000}
 
