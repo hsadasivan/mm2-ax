@@ -35,7 +35,7 @@ with open(ip, 'r') as f:
         if line.startswith(">"):
             header = line.strip()
             seq = next(f).strip()
-            if len(seq) <=2000:
+            if len(seq)>1000 and len(seq) <=2000:
                 f2k.write('\n'+header + '\n' + seq)
 
             elif len(seq) <=3000:

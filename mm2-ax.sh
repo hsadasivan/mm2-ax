@@ -35,7 +35,7 @@ elif [[ $1 -eq 30000 ]]
 then	
 	echo "bin length set to $1"
 	head -n $((1*9*2)) data/ONT/30k.fa > data/ip.fa; 
-	head -n $((23016*9*2)) data/ONT/2k.fa >> data/ip.fa; bin/b30k -t 1 -x map-ont data/hg38.mmi data/ip.fa > out/30k.log;
+	head -n $((23015*9*2)) data/ONT/2k.fa >> data/ip.fa; bin/b30k -t 1 -x map-ont data/hg38.mmi data/ip.fa > out/30k.log;
 
 elif [[ $1 -eq 40000 ]]
 then	
@@ -69,4 +69,4 @@ then
 fi
 
 #generate output from mm2-fast to check output equality
-bin/mm2-fast -t 1 -x map-ont data/hg38.mmi data/ip.fa > out/2k-mm2-fast.log;
+#bin/mm2-fast -t 1 -x map-ont data/hg38.mmi data/ip.fa > out/2k-mm2-fast.log;
