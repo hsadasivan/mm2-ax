@@ -17,17 +17,23 @@ Support for other environments is not tested.
 
 **1.2 Software**:
 
-(1) Run [docker container](https://hub.docker.com/repository/docker/hariumich/mm2-ax/general)
+(1) Pull [docker image](https://hub.docker.com/repository/docker/hariumich/mm2-ax/general)
 ```
 git clone https://github.com/hsadasivan/mm2-ax.git
 cd mm2-ax/;
 sudo chmod +x *.sh
 ./setup_docker.sh;
-./mm2-ax.sh <desired_read_length>
+
 ```
 >Please choose desired_read_length from any of {2000,3000,4000,5000,10000,20000,30000,40000,50000,100000,150000}
 
-(2) Output validation: After ./mm2-ax.sh completes, you may please compare mm2-ax generated out/*.log with [mm2-fast v2.18](https://github.com/lh3/minimap2/tree/d6e6811a0f797e2a8391b02497b99739e7a14c31) generated out/*-mm2-fast.log to validate the output.
+(2) Download dataset and run mm2-ax:
+
+```
+./download_datasets.sh
+./mm2-ax.sh <desired_read_length>
+```
+(3) Output validation: After ./mm2-ax.sh completes, you may please compare mm2-ax generated out/*.log with [mm2-fast v2.18](https://github.com/lh3/minimap2/tree/d6e6811a0f797e2a8391b02497b99739e7a14c31) generated out/*-mm2-fast.log to validate the output.
 
 
 **2. Current limitations**:
