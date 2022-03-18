@@ -15,7 +15,10 @@ RUN apt-get update && apt-get -y --no-install-recommends install \
     wget \
     libz-dev  \
     git \
-    manpages-dev
+    manpages-dev \
+    vim \
+    unzip \
+    curl
 RUN apt-get update && apt-get install -y software-properties-common gcc && \
     add-apt-repository -y ppa:deadsnakes/ppa
 

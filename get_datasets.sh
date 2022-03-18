@@ -9,7 +9,6 @@ fail=false
 
 ############INSTALL AWS##########################################
 echo -e "\n${G1}installing aws s3 (for downloading datasets)${G2}"
-sudo apt-get install unzip;
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" \
     -o "aws_cli_v2.zip" && \
     unzip aws_cli_v2.zip && \
