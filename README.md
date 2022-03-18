@@ -29,6 +29,7 @@ sudo chmod +x *.sh
 (2) Download datasets and run mm2-ax:
 
 ```
+cd mm2-ax;
 ./get_datasets.sh
 ./mm2-ax.sh <desired_read_length>
 ```
