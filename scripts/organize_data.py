@@ -3,7 +3,7 @@
 
 import sys
 #input FASTA file 
-ip="data/ONT/HG002_ucsc_Jan_2019_Guppy_3.4.4.fasta"
+ip=sys.argv[1]
 
 #output files with binned reads
 #f1k = open("data/ONT/1k.fa","w+")
