@@ -5,7 +5,9 @@ G2='\033[0m'
 R1='\033[0;31m'
 R2='\033[0m'
 fail=false
-
+#####The script by default downloads a large dataset, if you'd like to test your own custom dataset, 
+### please replace this path to your own dataset. Please make sure all the read lengths are > 1Kb and <= 150Kb.
+DATASET=data/ONT/HG002_ucsc_Jan_2019_Guppy_3.4.4.fasta
 
 ############INSTALL AWS##########################################
 echo -e "\n${G1}installing aws s3 (for downloading datasets)${G2}"
@@ -44,7 +46,7 @@ rm -rf GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz;
 
 #############Re-organize data into bins based on read length######
 echo -e "\n${G1}re-organizing data into bins...${G2}"
-python3 scripts/organize_data.py data/ONT/HG002_ucsc_Jan_2019_Guppy_3.4.4.fasta || fail=true
+python3 scripts/organize_data.py $DATASET || fail=true
 sed -i '1d' data/ONT/*.fa;
 if $fail; then echo -e "\n${R1}Re-organization of data failed${R2}"; exit 1; else echo -e "${G1}Reads are successfully re-organized into bins!${G2}"; fi
 
