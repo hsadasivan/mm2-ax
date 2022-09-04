@@ -33,6 +33,7 @@ sudo chmod +x *.sh
 ./setup_docker.sh;
 cd mm2-ax;
 ./mm2-ax.sh <desired_read_length>
+#For correctness check use bin/minimap2-correcteness-check
 ```
 >Please choose desired_read_length from any of {2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 100000, 150000}
 
