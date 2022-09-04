@@ -13,6 +13,7 @@ sudo apt-get update;
 sudo apt-get install -y build-essential;
 sudo apt-get update;
 sudo apt-get install libz-dev;
+sudo apt install zip -y;
 wget https://developer.download.nvidia.com/compute/cuda/11.5.2/local_installers/cuda_11.5.2_495.29.05_linux.run; sudo sh cuda_11.5.2_495.29.05_linux.run --silent
 
 sudo docker pull hariumich/mm2-ax:1.2;
