@@ -43,7 +43,7 @@ Although docker is the most popular container environment, we realize that some 
 
 ```
 singularity pull docker://hariumich/mm2-ax:1.2
-singularity shell mm2-ax_1.2.sif
+singularity shell --nv mm2-ax_1.2.sif
 ```
 >Please choose desired_read_length from any of {2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 100000, 150000}
 
