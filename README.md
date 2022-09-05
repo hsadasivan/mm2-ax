@@ -39,6 +39,8 @@ cd mm2-ax;
 
 Follow this for singularity:
 Although docker is the most popular container environment, we realize that some of our users may use bare-metal GPUs and therefore we would like to provide help with using singularity to load the docker image. Please follow [singularity instruction manual](https://docs.sylabs.io/guides/3.0/user-guide/quick_start.html#:~:text=Singularity%20v3.,image%20format%20that%20is%20writable.). Make sure to install singularity version 3.5.3.
+
+
 ```
 singularity pull docker://hariumich/mm2-ax:1.2
 singularity shell mm2-ax_1.2.sif
