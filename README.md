@@ -25,8 +25,9 @@ Support for other environments is not tested.
 
 (1) Run 
 
-mm2-ax is closed source but we provide a [docker container](https://hub.docker.com/repository/docker/hariumich/mm2-ax) to easily test mm2-ax.
-```
+Follow this for docker:
+mm2-ax is closed source but we provide a [docker container](https://hub.docker.com/repository/docker/hariumich/mm2-ax) to easily test mm2-ax. 
+``
 git clone https://github.com/hsadasivan/mm2-ax.git
 cd mm2-ax/;
 sudo chmod +x *.sh
@@ -34,6 +35,13 @@ sudo chmod +x *.sh
 cd mm2-ax;
 ./mm2-ax.sh <desired_read_length> <path_to_data_folder>
 #For correctness check use bin/minimap2-correcteness-check
+```
+
+Follow this for singularity:
+Although docker is the most popular container environment, we realize that some of our users may use bare-metal GPUs and therefore we would like to provide help with using singularity to load the docker image. Please follow [singularity instruction manual](https://docs.sylabs.io/guides/3.0/user-guide/quick_start.html#:~:text=Singularity%20v3.,image%20format%20that%20is%20writable.). Make sure to install singularity version 3.5.3.
+```
+singularity pull docker://hariumich/mm2-ax:1.2
+singularity shell mm2-ax_1.2.sif
 ```
 >Please choose desired_read_length from any of {2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 100000, 150000}
 
