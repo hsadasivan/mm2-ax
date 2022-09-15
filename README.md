@@ -48,6 +48,7 @@ singularity shell --nv mm2-ax_1.2.sif
 
 **(2.2) Download dataset and/or bin reads:**
 ```
+git clone https://github.com/hsadasivan/mm2-ax.git; cd mm2-ax/;
 ./get_datasets.sh <path_to_custom_dataset> <1 to use downloaded dataset; 0 to use custom>
 #For example, if you are downloading 60X HG002 dataset from paper please use the following:
 # ./get_datasets.sh data/ONT/HG002_ucsc_Jan_2019_Guppy_3.4.4.fasta 1
@@ -55,7 +56,6 @@ singularity shell --nv mm2-ax_1.2.sif
 
 **(2.3) Running mm2-ax on downloaded HG002 60X:**
 ```
-git clone https://github.com/hsadasivan/mm2-ax.git; cd mm2-ax/;
 ./mm2-ax.sh <desired_read_length> <path_to_ONT_folder>
 #for example, ./mm2-ax.sh 2000 ../data/ONT
 ```
