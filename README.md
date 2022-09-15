@@ -86,7 +86,7 @@ gvim -d mm2-ax-<read-length>.log minimap2-<read-length>.log
 
 (2)Please do not compare the wall-clock time as the application is not yet optimized for end-to-end time. We optimize only for chaining (including data transfer costs) and print the measured time in stderr.
 
-(3) If you are using a custom large dataset and the program fails with Invalid GPU address or out of GPU memory error, please reduce the number of input reads and re-try. We currently only one batch of reads whose metadata can reside on the GPU's DRAM. Please refer to mm2-ax.sh for approximate numbers per read length.
+(3) If you are using a custom large dataset and the program fails with Invalid GPU address or out of GPU memory error, please reduce the number of input reads and re-try. mm2-ax is curretly limited by the GPU's DRAM capacity. Please refer to mm2-ax.sh for approximate numbers per read length for 40GB DRAM.
 
 
 
