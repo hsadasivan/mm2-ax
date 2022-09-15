@@ -46,9 +46,11 @@ singularity shell --nv mm2-ax_1.2.sif
 ```
 
 (2) Running mm2-ax:
+```
 git clone https://github.com/hsadasivan/mm2-ax.git; cd mm2-ax/;
 ./mm2-ax.sh <desired_read_length> <path_to_ONT_folder>
 #for example, ./mm2-ax.sh 2000 ../data/ONT
+```
 >Please choose desired_read_length from any of {2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 100000, 150000}
 
 (3) Output validation: After ./mm2-ax.sh completes, you may please compare mm2-ax generated output in out/*.log with [mm2-fast v2.18](https://github.com/lh3/minimap2/tree/d6e6811a0f797e2a8391b02497b99739e7a14c31) to mm2-fast generated output out/*-mm2-fast.log.
