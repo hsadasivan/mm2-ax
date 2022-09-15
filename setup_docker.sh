@@ -19,7 +19,7 @@ sudo apt-get update;
 
 wget https://developer.download.nvidia.com/compute/cuda/11.5.2/local_installers/cuda_11.5.2_495.29.05_linux.run; sudo sh cuda_11.5.2_495.29.05_linux.run --toolkit;
 sudo sh cuda_11.5.2_495.29.05_linux.run --driver;
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda-11.6/lib64";
-export PATH="$PATH:/usr/local/cuda-11.6/bin"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda-11.5/lib64";
+export PATH="$PATH:/usr/local/cuda-11.5/bin"
 sudo docker pull hariumich/mm2-ax:1.2;
 sudo docker run -it --rm --gpus all --mount type=bind,source=${PWD},target=/mm2-ax/  hariumich/mm2-ax:1.2 bash;
