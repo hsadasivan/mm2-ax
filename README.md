@@ -24,7 +24,7 @@ Support for other environments is not tested.
 
 **2 Software**:
 
-(2.1) Docker/Singularity set-up:
+**(2.1) Docker/Singularity set-up:**
 
 Docker:
 mm2-ax is closed source but we provide a [docker container](https://hub.docker.com/repository/docker/hariumich/mm2-ax) to easily test mm2-ax. 
@@ -45,12 +45,12 @@ singularity pull docker://hariumich/mm2-ax:1.2
 singularity shell --nv mm2-ax_1.2.sif
 ```
 
-(2.2)Download dataset & bin reads:
+**(2.2) Download dataset & bin reads:**
 ```
 ./get_datasets.sh <path_to_custom_dataset or else use data/ONT/HG002_ucsc_Jan_2019_Guppy_3.4.4.fasta> <1 to download; 0 to use custom>
 ```
 
-(2.3)Running mm2-ax on downloaded HG002 60X:
+**(2.3) Running mm2-ax on downloaded HG002 60X:**
 ```
 git clone https://github.com/hsadasivan/mm2-ax.git; cd mm2-ax/;
 ./mm2-ax.sh <desired_read_length> <path_to_ONT_folder>
@@ -58,13 +58,13 @@ git clone https://github.com/hsadasivan/mm2-ax.git; cd mm2-ax/;
 ```
 >Please choose desired_read_length from any of {2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 100000, 150000}
 
-(2.3)Running mm2-ax on a custom dataset:
+**(2.3) Running mm2-ax on a custom dataset:**
 ```
 bin/mm2-ax -t 1 -x map-ont <path_to_mm2_index.mmi> <FASTA/FASTQ input> --total-no-of-reads=<total reads in input file> --blocks-per-stream=<reads per stream>
 #<reads per stream> may be used for tuning the performance. It is either 9 or 972 for optimal performance on A100.
 ```
 
-(3) Output validation: 
+**(3) Output validation: **
 After step (2) is complete, you may please compare mm2-ax generated output in mm2-ax-<read-length>.log with  to [minimap2](https://github.com/lh3/minimap2/tree/7bc87b4175dcf3b6df7d4f6ae9db5f3eadd30302) or 
  [mm2-fast](https://github.com/lh3/minimap2/tree/d6e6811a0f797e2a8391b02497b99739e7a14c31)
 ```
