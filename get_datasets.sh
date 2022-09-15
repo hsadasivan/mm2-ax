@@ -5,8 +5,9 @@ G2='\033[0m'
 R1='\033[0;31m'
 R2='\033[0m'
 fail=false
-### $1 is the input dataset path: data/ONT/HG002_ucsc_Jan_2019_Guppy_3.4.4.fasta
+### $1 is the absolute path to input dataset. For example, data/ONT/HG002_ucsc_Jan_2019_Guppy_3.4.4.fasta
 ####$2 is 1 if you need to download dataset, 0 otherwise
+##Output: binned reads will appear in data/ONT folder
 
 
 #DATASET=data/ONT/HG002_ucsc_Jan_2019_Guppy_3.4.4.fasta
@@ -25,7 +26,6 @@ if $fail; then echo -e "\n${R1}aws s3 installation failed${R2}"; exit 1; else ec
 
 ##############Download publicly available ONT dataset from AWS ####
 echo -e "\n${G1}downloading ONT data...${G2}"
-mkdir -p data/ONT/
 aws/dist/aws s3 --no-sign-request cp s3://human-pangenomics/NHGRI_UCSC_panel/HG002/hpp_HG002_NA24385_son_v1/nanopore/downsampled/standard_unsheared/HG002_ucsc_Jan_2019_Guppy_3.4.4.fastq.gz data/ONT/ || fail=true
 if $fail; then echo -e "\n${R1}ONT data download failed${R2}"; exit 1; else echo -e "${G1}ONT data is successfully downloaded!${G2}"; fi
 
