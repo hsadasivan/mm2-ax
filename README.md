@@ -74,8 +74,8 @@ bin/mm2-ax -t 1 -x map-ont <path_to_mm2_index.mmi> <FASTA/FASTQ input> --total-n
 After step (2) is complete, you may please compare mm2-ax generated output in mm2-ax-<read-length>.log with  to [minimap2](https://github.com/lh3/minimap2/tree/7bc87b4175dcf3b6df7d4f6ae9db5f3eadd30302) or 
  [mm2-fast](https://github.com/lh3/minimap2/tree/d6e6811a0f797e2a8391b02497b99739e7a14c31)
 ```
-bin/minimap2 -t 1 -x map-ont $2/hg38.mmi `<FASTA/FASTQ input>` > mm2-<read-length>.log
-bin/mm2-fast -t 1 -x map-ont $2/hg38.mmi <FASTA/FASTQ input> > mm2-fast-<read-length>.log
+bin/minimap2 -t 1 -x map-ont <.mmi index> <FASTA/FASTQ input> > mm2-<read-length>.log
+bin/mm2-fast -t 1 -x map-ont <.mmi index> <FASTA/FASTQ input> > mm2-fast-<read-length>.log
 ```
 
 
