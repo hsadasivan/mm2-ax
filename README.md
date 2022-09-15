@@ -61,10 +61,10 @@ git clone https://github.com/hsadasivan/mm2-ax.git; cd mm2-ax/;
 **(2.3) Running mm2-ax on a custom binned ONT dataset:**
 ```
 bin/mm2-ax -t 1 -x map-ont <path_to_mm2_index.mmi> <FASTA/FASTQ input> --total-no-of-reads=<total reads in input file> --blocks-per-stream=<reads per stream>
-#<reads per stream> may be used for tuning the performance. It is either 9 or 972 for optimal performance on A100.
+#<reads per stream> may be used for experimenting and tuning the performance on your GPU of choice (Volta, Turing and Ampere). Please set it to either 9 (for <=10Kb) or 972 for optimal performance on A100 based on your average read length. 
 ```
 
-**3. Output validation: **
+**3. Output validation:**
 After step (2) is complete, you may please compare mm2-ax generated output in mm2-ax-<read-length>.log with  to [minimap2](https://github.com/lh3/minimap2/tree/7bc87b4175dcf3b6df7d4f6ae9db5f3eadd30302) or 
  [mm2-fast](https://github.com/lh3/minimap2/tree/d6e6811a0f797e2a8391b02497b99739e7a14c31)
 ```
