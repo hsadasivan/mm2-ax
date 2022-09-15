@@ -56,6 +56,7 @@ git clone https://github.com/hsadasivan/mm2-ax.git; cd mm2-ax/;
 (2.3)[Optional] Running mm2-ax on a custom dataset:
 ```
 bin/mm2-ax -t 1 -x map-ont <path_to_mm2_index.mmi> <FASTA/FASTQ input> --total-no-of-reads=<total reads in input file> --blocks-per-stream=<reads per stream>
+#<reads per stream> may be used for tuning the performance. It is either 9 or 972 for optimal performance on A100.
 ```
 
 (3) Output validation: After ./mm2-ax.sh completes, you may please compare mm2-ax generated output in out/*.log with [mm2-fast v2.18](https://github.com/lh3/minimap2/tree/d6e6811a0f797e2a8391b02497b99739e7a14c31) to mm2-fast generated output out/*-mm2-fast.log.
@@ -63,10 +64,10 @@ bin/mm2-ax -t 1 -x map-ont <path_to_mm2_index.mmi> <FASTA/FASTQ input> --total-n
 
 **2. Current limitations**:
 
-(1) Current support is only for 1 CPU thread.
+(1) Currently, we only support one host CPU thread.
 
-(2) Please use only the input datasets and application provided for testing. Development of concurent GPU I/O management is in-progress and future releases will support any input number of reads. If mm2-ax fails on any of the bins, please clear your GPU's DRAM or use another GCP instance.
+(2) If you are using a custom large dataset and the program fails with Invalid GPU address error, please reduce the nmber of input reads and re-try.
 
-(3)Please do not compare the wall-clock time as the application is not yet optimized for end-to-end time. We optimize only for chaining and print the measured time in the log.
+(3)Please do not compare the wall-clock time as the application is not yet optimized for end-to-end time. We optimize only for chaining (including data transfer costs) and print the measured time in the log.
 
 
