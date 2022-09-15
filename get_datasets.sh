@@ -5,10 +5,13 @@ G2='\033[0m'
 R1='\033[0;31m'
 R2='\033[0m'
 fail=false
-#####The script by default downloads a large dataset, if you'd like to test your own custom dataset, 
-### please replace this path to your own dataset. Please make sure all the read lengths are > 1Kb and <= 150Kb.
-DATASET=data/ONT/HG002_ucsc_Jan_2019_Guppy_3.4.4.fasta
+### $1 is inut dataset path = data/ONT/HG002_ucsc_Jan_2019_Guppy_3.4.4.fasta
+$2 is 1 if you need to download dataset, 0 otherwise
+##### Please make sure all the read lengths are > 1Kb and <= 150Kb.
 
+#DATASET=data/ONT/HG002_ucsc_Jan_2019_Guppy_3.4.4.fasta
+
+if $2; then
 ############INSTALL AWS##########################################
 echo -e "\n${G1}installing aws s3 (for downloading datasets)${G2}"
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" \
@@ -43,6 +46,7 @@ bin/b2k -t 1 -x map-ont -d data/hg38.mmi data/hg38.fa || fail=ture;
 if $fail; then echo -e "\n${R1}minimap2 index building step failed${R2}"; exit 1; else echo -e "${G1}hg38 reference index is succesfully built!${G2}"; fi
 rm -rf GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz;
 
+fi
 
 #############Re-organize data into bins based on read length######
 echo -e "\n${G1}re-organizing data into bins...${G2}"
