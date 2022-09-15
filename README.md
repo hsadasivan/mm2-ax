@@ -58,7 +58,7 @@ git clone https://github.com/hsadasivan/mm2-ax.git; cd mm2-ax/;
 ```
 >Please choose desired_read_length from any of {2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 100000, 150000}
 
-(2.4)Running mm2-ax on a custom dataset:
+(2.3)Running mm2-ax on a custom dataset:
 ```
 bin/mm2-ax -t 1 -x map-ont <path_to_mm2_index.mmi> <FASTA/FASTQ input> --total-no-of-reads=<total reads in input file> --blocks-per-stream=<reads per stream>
 #<reads per stream> may be used for tuning the performance. It is either 9 or 972 for optimal performance on A100.
