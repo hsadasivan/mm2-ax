@@ -77,7 +77,7 @@ bin/mm2-fast -t 1 -x map-ont $2/hg38.mmi $2/ip.fa > mm2-fast-<read-length>.log
 
 (1) Currently, we only support one host CPU thread.
 
-(2) If you are using a custom large dataset and the program fails with Invalid GPU address error, please reduce the nmber of input reads and re-try.
+(2) If you are using a custom large dataset and the program fails with Invalid GPU address error, please reduce the number of input reads and re-try.
 
 (3)Please do not compare the wall-clock time as the application is not yet optimized for end-to-end time. We optimize only for chaining (including data transfer costs) and print the measured time in stderr.
 
