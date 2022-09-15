@@ -27,7 +27,7 @@ Support for other environments is not tested.
 **(2.1) Docker/Singularity set-up:**
 
 Docker:
-mm2-ax is closed source but we provide a [docker container](https://hub.docker.com/repository/docker/hariumich/mm2-ax) to easily test mm2-ax. 
+Unfortunately, mm2-ax is currently closed source from NVIDIA but we provide a [docker container](https://hub.docker.com/repository/docker/hariumich/mm2-ax) to easily test mm2-ax. 
 
 ```
 git clone https://github.com/hsadasivan/mm2-ax.git
@@ -37,7 +37,7 @@ sudo chmod +x *.sh
 ```
 
 Follow this for singularity:
-Although docker is the most popular container environment, we realize that some of our users may use bare-metal GPUs and therefore we would like to provide help with using singularity to load the docker image. Please follow [singularity installation manual](https://docs.sylabs.io/guides/3.0/user-guide/quick_start.html#:~:text=Singularity%20v3.,image%20format%20that%20is%20writable.). Make sure to install singularity version 3.5.3.
+Although docker is the most popular container environment, we realize that some of our users may use bare-metal GPUs and therefore we suggest the following to use singularity to load the docker image. Please follow [singularity installation manual](https://docs.sylabs.io/guides/3.0/user-guide/quick_start.html#:~:text=Singularity%20v3.,image%20format%20that%20is%20writable.). Make sure to install singularity version 3.5.3.
 
 
 ```
