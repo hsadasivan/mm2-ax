@@ -64,7 +64,12 @@ bin/mm2-ax -t 1 -x map-ont <path_to_mm2_index.mmi> <FASTA/FASTQ input> --total-n
 #<reads per stream> may be used for tuning the performance. It is either 9 or 972 for optimal performance on A100.
 ```
 
-(3) Output validation: After ./mm2-ax.sh completes, you may please compare mm2-ax generated output in out/*.log with [mm2-fast v2.18](https://github.com/lh3/minimap2/tree/d6e6811a0f797e2a8391b02497b99739e7a14c31) to mm2-fast generated output out/*-mm2-fast.log.
+(3) Output validation: 
+After step (2) is complete, you may please compare mm2-ax generated output in mm2-ax-<read-length>.log with  to or minimap2 or mm2-fast (https://github.com/lh3/minimap2/tree/d6e6811a0f797e2a8391b02497b99739e7a14c31)
+```
+bin/minimap2 -t 1 -x map-ont $2/hg38.mmi $2/ip.fa > mm2-$1.log
+bin/mm2-fast -t 1 -x map-ont $2/hg38.mmi $2/ip.fa > mm2-fast-$1.log
+```
 
 
 **2. Current limitations**:
