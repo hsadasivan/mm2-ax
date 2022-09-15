@@ -12,9 +12,9 @@ mm2-ax is [minimap2 v2.17](https://github.com/lh3/minimap2/tree/7bc87b4175dcf3b6
 Please direct all queries to [Harisankar Sadasivan](https://github.com/harisankarsadasivan?tab=repositories), hariss@umich.edu
 
 
-**1. Guidelines for using**:
 
-**1.1 Hardware**:
+
+**1 Hardware recommendations**:
 
 x86-64 CPU with 85GB RAM and A100 GPU with 40GB DRAM. OS:  Ubuntu 18.04
 Suggested GCP instance with this configuration: a2-highgpu-1g
@@ -22,9 +22,9 @@ Suggested minimum data disk size: 500GB.
 Pro-tip: Researchers may use the first time $300-400 of free credits from GCP.
 Support for other environments is not tested.
 
-**1.2 Software**:
+**2 Software**:
 
-(1) Docker/Singularity set-up:
+(2.1) Docker/Singularity set-up:
 
 Docker:
 mm2-ax is closed source but we provide a [docker container](https://hub.docker.com/repository/docker/hariumich/mm2-ax) to easily test mm2-ax. 
@@ -45,13 +45,18 @@ singularity pull docker://hariumich/mm2-ax:1.2
 singularity shell --nv mm2-ax_1.2.sif
 ```
 
-(2) Running mm2-ax:
+(2.2) Running mm2-ax:
 ```
 git clone https://github.com/hsadasivan/mm2-ax.git; cd mm2-ax/;
 ./mm2-ax.sh <desired_read_length> <path_to_ONT_folder>
 #for example, ./mm2-ax.sh 2000 ../data/ONT
 ```
 >Please choose desired_read_length from any of {2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 100000, 150000}
+
+(2.3)[Optional] Running mm2-ax on a custom dataset:
+```
+bin/mm2-ax -t 1 -x map-ont <path_to_mm2_index.mmi> <FASTA/FASTQ input> --total-no-of-reads=<total reads in input file> --blocks-per-stream=<reads per stream>
+```
 
 (3) Output validation: After ./mm2-ax.sh completes, you may please compare mm2-ax generated output in out/*.log with [mm2-fast v2.18](https://github.com/lh3/minimap2/tree/d6e6811a0f797e2a8391b02497b99739e7a14c31) to mm2-fast generated output out/*-mm2-fast.log.
 
