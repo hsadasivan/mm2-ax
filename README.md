@@ -57,7 +57,7 @@ git clone https://github.com/hsadasivan/mm2-ax.git; cd mm2-ax/;
 **(2.3) Running mm2-ax on downloaded HG002 60X:**
 ```
 ./mm2-ax.sh <desired_read_length> <path_to_ONT_folder>
-#for example, ./mm2-ax.sh 2000 ../data/ONT
+#for example, ./mm2-ax.sh 2000 data/ONT
 ```
 >Please choose desired_read_length from any of {2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 100000, 150000}
 
