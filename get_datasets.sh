@@ -5,9 +5,9 @@ G2='\033[0m'
 R1='\033[0;31m'
 R2='\033[0m'
 fail=false
-### $1 is inut dataset path = data/ONT/HG002_ucsc_Jan_2019_Guppy_3.4.4.fasta
-$2 is 1 if you need to download dataset, 0 otherwise
-##### Please make sure all the read lengths are > 1Kb and <= 150Kb.
+### $1 is the input dataset path: data/ONT/HG002_ucsc_Jan_2019_Guppy_3.4.4.fasta
+####$2 is 1 if you need to download dataset, 0 otherwise
+
 
 #DATASET=data/ONT/HG002_ucsc_Jan_2019_Guppy_3.4.4.fasta
 
@@ -50,7 +50,7 @@ fi
 
 #############Re-organize data into bins based on read length######
 echo -e "\n${G1}re-organizing data into bins...${G2}"
-python3 scripts/organize_data.py $DATASET || fail=true
+python3 scripts/organize_data.py $1 || fail=true
 sed -i '1d' data/ONT/*.fa;
 if $fail; then echo -e "\n${R1}Re-organization of data failed${R2}"; exit 1; else echo -e "${G1}Reads are successfully re-organized into bins!${G2}"; fi
 
