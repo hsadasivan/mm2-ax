@@ -64,8 +64,9 @@ git clone https://github.com/hsadasivan/mm2-ax.git; cd mm2-ax/;
 **(2.3) Alternatively, run mm2-ax on a binned custom ONT dataset from 2.2:**
 ```
 bin/mm2-ax -t 1 -x map-ont <path_to_mm2_index.mmi> <FASTA/FASTQ input> --total-no-of-reads=<total reads in input file> --blocks-per-stream=<reads per stream> > mm2-ax-<read-length>.log
-#<reads per stream> may be used for tuning the performance on your GPU of choice (Volta, Turing and Ampere).
-#For A100, blocks-per-stream=9 (for > 10Kb) or 972 (for <=10Kb) based on the read lengths of choice.
+#<reads per stream> may be used for tuning the performance on your GPU of choice (Pascal,Volta, Turing and Ampere).
+#For compute capabilities of 7.0, 7.2 and 8.0, we recommend,
+#blocks-per-stream=9 (for > 10Kb) or 972 (for <=10Kb) based on the read lengths of choice.
 
 ```
 
