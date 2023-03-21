@@ -2,6 +2,8 @@
  
 mm2-ax is [minimap2 v2.17](https://github.com/lh3/minimap2/tree/7bc87b4175dcf3b6df7d4f6ae9db5f3eadd30302) with GPU accelerated chaining for accurate long read alignment.
 
+If you are using mm2-ax in any part of your work, please cite:
+>Harisankar Sadasivan, Milos Maric, Eric Dawson, Vishanth Iyer, Johnny Israeli, Satish Narayanasamy. Accelerating Minimap2 for Accurate Long Read Alignment on GPUs. Journal of Biotechnology and Biomedicine 6 (2023): 13-23.
 
 
 ![overview](https://user-images.githubusercontent.com/84148853/159078375-9ec1b75a-72cd-4e51-be34-4877e8144ef4.png)
